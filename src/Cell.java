@@ -14,8 +14,8 @@ public class Cell {
         Random rand = new Random();
 
 
-        int i = rand.nextInt(7);
-        int j = rand.nextInt(8);
+        int i = rand.nextInt( 16);
+        int j = rand.nextInt(17);
         i += 2;
         j += 2;
         for (int a = 0; a < size; a++) {
@@ -48,8 +48,7 @@ public class Cell {
                     if (!isLife(n[i][j])) {
                         n[i][j] = -1;
                     }
-//                    if (i > 1 && i < (size - 1) && j > 1 && j < (size - 1)) {
-                    System.out.printf("[%d][%d]\n", i, j);
+                    //System.out.printf("[%d][%d]\n", i, j);
                     if (checkCycle(i - 1, j - 1, n) == 3 && !isLife(n[i - 1][j - 1])) {
                         n[i - 1][j - 1] = -1;//born
                     }
@@ -75,8 +74,6 @@ public class Cell {
                         n[i + 1][j + 1] = -1;//born
                     }
 
-//                    }
-
                 } else if (count == 1 || count > 3) { //die spot
                     keep[cnt][0] = i;
                     keep[cnt][1] = j;
@@ -92,7 +89,7 @@ public class Cell {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 if (n[i][j] == -1) {
-                    System.out.println("born " + i + " " + j);
+//                    System.out.println("born " + i + " " + j);
                     n[i][j] = 1;//set new born spot value
                 }
             }

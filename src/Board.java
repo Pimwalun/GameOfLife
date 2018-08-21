@@ -12,11 +12,11 @@ public class Board {
             for(int b = 0 ; b < size ; b++){
                 if(fristLife[a][b] == 1){
                     System.out.printf("(%d,%d)",a,b);
-                    //System.out.print("*");
+                    //System.out.print("|");
                 }
                 if(fristLife[a][b] == 0)
                     System.out.print("(_,_)");
-                    //System.out.print(" ");
+                    //System.out.print("_");
             }
             System.out.println();
         }
